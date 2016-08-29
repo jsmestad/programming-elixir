@@ -23,4 +23,15 @@ defmodule MyList do
     do_max(tail, highest)
   end
 
+
+  def ceaser([], _n), do: []
+
+  def ceaser([head|tail], n) when head+n <= ?z do
+    [head+n, ceaser(tail, n)]
+  end
+
+  def ceaser([head|tail], n) do
+    [head-26+n, ceaser(tail, n)]
+  end
+
 end
