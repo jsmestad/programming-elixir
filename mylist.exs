@@ -1,4 +1,6 @@
 defmodule MyList do
+
+  # Map + Sum
   def mapsum([], _func) do
     0
   end
@@ -7,6 +9,8 @@ defmodule MyList do
     func.(head) + mapsum(tail, func)
   end
 
+
+  # Max
   def max(list) do
     do_max(list, 0)
   end
@@ -24,6 +28,7 @@ defmodule MyList do
   end
 
 
+  # Ceaser
   def ceaser([], _n), do: []
 
   def ceaser([head|tail], n) when head+n <= ?z do
@@ -34,4 +39,9 @@ defmodule MyList do
     [head-26+n, ceaser(tail, n)]
   end
 
+  # Span from `a` to `b`
+  def span(a, b) when a == b, do: [b]
+  def span(a, b) do
+    [a | span(a+1, b)]
+  end
 end
